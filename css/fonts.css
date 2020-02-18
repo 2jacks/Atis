@@ -1,0 +1,13 @@
+/*Streetwear*/
+
+@font-face {
+    font-family: "Streetwear";
+    src: url(../fonts/Streetwear.otf);
+}
+
+/*Molle*/
+
+@font-face {
+    font-family: "Molle";
+    src: url(../fonts/Molle-Regular.ttf);
+}
