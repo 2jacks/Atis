@@ -11,6 +11,11 @@ h1,h2,h3,h4,h5,h6 {
     margin: 0;
 }
 
+body {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+}
+
 
 .container {
     margin: 0 auto;
@@ -158,5 +163,104 @@ h1,h2,h3,h4,h5,h6 {
     }
 }
 
+/*============== Form ==============*/
 
-@media
+.form {
+    height: 14vh;
+    background-color: #017dfb;
+    
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    
+    align-items: center;
+      
+}
+
+.form__inner {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    
+    align-items: center;
+    justify-content: center;
+    
+    width: 100%;
+}
+
+.form__fields {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    justify-content: space-between;
+    
+    width: 87%;
+}
+
+.form__item {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+ 
+    width: 13%;
+
+    padding-bottom: 10px;
+    list-style: none;
+    border-bottom: 1px solid #379aff;
+    transition: border-bottom .2s linear;
+}
+
+.form__item:focus-within {
+    border-bottom: 1px solid #fff;
+}
+
+.form__icon {
+    width: 20px;
+    min-width: 20px;
+    height: 20px;
+    min-height: 20px;
+    margin-bottom: 4px;
+    
+    fill: #379aff;
+    transition: fill .2s linear;
+}
+
+.form__item:focus-within .form__icon {
+    fill: #fff;
+}
+
+.form__input {
+    margin-left: 14px;
+    
+    background-color: transparent;
+    border-style: none;
+    
+    color: #fff;
+    font-size: 16px;
+    
+    
+}
+
+.form__input::-webkit-input-placeholder {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.form__input:focus {
+    outline: none;
+}
+
+
+
+.form__input:focus::-webkit-input-placeholder {
+    opacity: 0.3;
+}
