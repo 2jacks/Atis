@@ -14,6 +14,7 @@ h1,h2,h3,h4,h5,h6 {
 body {
     font-family: "Roboto", sans-serif;
     font-weight: 400;
+    background-color: #fff;
 }
 
 
@@ -22,6 +23,8 @@ body {
     width: 96%;
     max-width: 1600px;
 }
+
+/*============== Common Styles ==============*/
 
 .button {
     border-style: solid;
@@ -45,6 +48,24 @@ body {
     -moz-box-shadow:    0px 0px 35px 0px rgba(1, 125, 251, 0.25);
     box-shadow:         0px 0px 35px 0px rgba(1, 125, 251, 0.25);
 }
+
+.section__header {
+    padding: 70px 0;
+    
+    font-size: 16px;
+    color: #697899;
+    opacity: .4;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: .3em;
+    word-spacing: 20px;
+}
+
+
+
+
+
+
 
 /*============== Hero ==============*/
 
@@ -70,7 +91,7 @@ body {
     
     justify-content: space-between;
     align-items: center;
-    padding: 2vw 0;
+    padding: 2vw 0 0 0;
     
     
 }
@@ -199,6 +220,7 @@ body {
     display: -o-flex;
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     
     width: 87%;
 }
@@ -209,6 +231,7 @@ body {
     display: -ms-flex;
     display: -o-flex;
     display: flex;
+    
  
     width: 13%;
 
@@ -263,4 +286,104 @@ body {
 
 .form__input:focus::-webkit-input-placeholder {
     opacity: 0.3;
+}
+
+.form__search {
+    width: 48px;
+    height: 48px;
+    margin-left: 15px;
+    
+    border-style: none;
+    border-radius: 50%;
+    background-color: #fff;
+    cursor: pointer;
+    
+    position: relative;
+    transition: box-shadow,transform 0.1s linear;
+}
+
+.form__search:hover {
+    -webkit-box-shadow: 0px 0px 35px 0px rgba(255, 255, 255, 0.25);
+    -moz-box-shadow:    0px 0px 35px 0px rgba(255, 255, 255, 0.25);
+    box-shadow:         0px 0px 35px 0px rgba(255, 255, 255, 0.5);
+    transform: scale(1.07);
+}
+
+.form__search--icon {
+    width: 20px;
+    height: 35px;
+    
+    fill: #017cf9;
+    
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    
+}
+
+@media (max-width:1099px) {
+    .form__fields {
+        justify-content: flex-start;
+    }
+    .form__item {
+        width: 23%;
+        margin-bottom: 15px;
+        margin-right: 15px;
+    }
+    .form__input {
+        margin-left: 7px;
+    }
+}
+    
+@media (max-width: 960px) {
+    .hero {
+        height: 100vh;
+    }
+    .form {
+        height: auto;
+        padding: 35px 0;
+    }  
+    .form__item {
+        width: 30%;
+    }
+}  
+@media (max-width: 575px) {
+    .form__inner {
+        -webkit-flex-direction: column;
+        -moz-flex-direction: column;
+        -ms-flex-direction: column;
+        -o-flex-direction: column;
+        flex-direction: column;
+        
+    }
+    .form__fields {
+        justify-content: center;
+        width: 90%;
+    }
+    .form__item {
+        width: 100%;
+        margin-right: 0;
+    }
+    
+    .form__search {
+        margin-left: 0;
+        margin-top: 15px;
+    }
+}
+
+
+/*============== MOST POPULAR PLACES ==============*/
+
+.pop-places__content {
+    display: grid;
+    grid-template-columns: repeat(7,1fr);
+    grid-template-rows: repeat(7, 10vh);
+    grid-gap: 30px;
+    
+    
+}
+
+.pop-places__item {
+    background-color: aqua;
 }
