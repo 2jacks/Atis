@@ -6,7 +6,7 @@
     <title>Atis</title>
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,400,700&display=swap" rel="stylesheet">
-<!--    <link rel="stylesheet" href="css/normalize.css">-->
+    <!--    <link rel="stylesheet" href="css/normalize.css">-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
@@ -28,7 +28,7 @@
                         <a class="nav__item" href="">About Greece</a>
                         <button class="button button--header">Become a host</button>
                     </nav>
-                    
+
                 </div>
             </div>
         </header>
@@ -85,14 +85,28 @@
                         <input class="form__input" type="text" placeholder="Stars">
                     </li>
                 </ul>
-                <input class="form__search" type="submit">
+                <button class="form__search" type="submit">
+                    <svg class="form__search--icon">
+                        <use xlink:href="sprite.svg#search"></use>
+                    </svg>
+                </button>
             </div>
 
         </div>
 
 
     </form>
-    
-</body>
+    <section class="pop-places">
+        <h3 class="section__header">Most popular places</h3>
+        <div class="pop-places__content">
+            <div class="pop-places__item pop-places__item--thesseloniki"></div>
+            <div class="pop-places__item pop-places__item--halkidiki"></div>
+            <div class="pop-places__item pop-places__item--crete"></div>
+            <div class="pop-places__item pop-places__item--athens"></div>
+            <div class="pop-places__item pop-places__item--mykonos"></div>
+            <div class="pop-places__item pop-places__item--meteora"></div>
+            <div class="pop-places__item pop-places__item--myrtos-beach"></div>
+        </div>
+    </section>
 
-</html>
+</body></html>
