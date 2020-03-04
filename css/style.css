@@ -377,7 +377,7 @@ body {
 
 .pop-places__content {
     display: grid;
-    grid-template-columns: repeat(7,1fr);
+    grid-template-columns: 30% 20% 20% 30%;
     grid-template-rows: repeat(7, 10vh);
     grid-gap: 30px;
     
@@ -385,5 +385,99 @@ body {
 }
 
 .pop-places__item {
-    background-color: aqua;
+    position: relative;
+}
+
+.pop-places__name {
+    position: absolute;
+    bottom: 5%;
+    left: 3%;
+
+    color: #fff;
+    font-size: 36px;
+
+}
+
+.pop-places__bg {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.pop-places__img {
+    object-fit: fill;
+}
+
+
+.pop-places__item--thesseloniki {
+    grid-row-start: 1;
+    grid-row-end: 3;
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
+.pop-places__item--thesseloniki .pop-places__img{
+    width: 100%;
+    transform: translateY(-15%);
+}
+
+.pop-places__item--crete {
+    grid-row-start: 1;
+    grid-row-end: 5;
+    grid-column-start: 2;
+    grid-column-end: 4;
+}
+.pop-places__item--crete .pop-places__img{
+    transform: translateX(-12%);
+}
+
+.pop-places__item--halkidiki {
+    grid-row-start: 3;
+    grid-row-end: 5;
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
+.pop-places__item--halkidiki .pop-places__img{
+    width: 100%;
+    transform: translateY(-15%);
+}
+
+.pop-places__item--athens {
+    grid-row-start: 1;
+    grid-row-end: 3;
+    grid-column-start: 4;
+    grid-column-end: 6;
+}
+.pop-places__item--athens .pop-places__img{
+    transform: translateY(-10%);
+}
+
+.pop-places__item--mykonos {
+    grid-row-start: 3;
+    grid-row-end: 5;
+    grid-column-start: 4;
+    grid-column-end: 6;
+}
+.pop-places__item--mykonos .pop-places__img{
+    transform: translateY(-15%);
+}
+
+.pop-places__item--meteora {
+    grid-row-start: 5;
+    grid-row-end: 8;
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+.pop-places__item--meteora .pop-places__img{
+    width: 100%;
+    transform: translateY(-15%);
+}
+
+.pop-places__item--myrtos-beach {
+    grid-row-start: 5;
+    grid-row-end: 8;
+    grid-column-start: 3;
+    grid-column-end: 5;
+}
+.pop-places__item--myrtos-beach .pop-places__img{
+    transform: translateY(-15%);
 }
