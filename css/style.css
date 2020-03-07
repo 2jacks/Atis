@@ -14,7 +14,7 @@ h1,h2,h3,h4,h5,h6 {
 body {
     font-family: "Roboto", sans-serif;
     font-weight: 400;
-    background-color: #fff;
+    background-color: #f9f9f9;
 }
 
 
@@ -375,11 +375,17 @@ body {
 
 /*============== MOST POPULAR PLACES ==============*/
 
+.pop-places {
+    width: 100%;
+}
+
 .pop-places__content {
     display: grid;
     grid-template-columns: 30% 20% 20% 30%;
     grid-template-rows: repeat(7, 10vh);
     grid-gap: 30px;
+    width: 100%;
+    margin: 0 auto;
     
     
 }
@@ -445,7 +451,7 @@ body {
     grid-row-start: 1;
     grid-row-end: 3;
     grid-column-start: 4;
-    grid-column-end: 6;
+    grid-column-end: 5;
 }
 .pop-places__item--athens .pop-places__img{
     transform: translateY(-10%);
@@ -455,7 +461,7 @@ body {
     grid-row-start: 3;
     grid-row-end: 5;
     grid-column-start: 4;
-    grid-column-end: 6;
+    grid-column-end: 5;
 }
 .pop-places__item--mykonos .pop-places__img{
     transform: translateY(-15%);
@@ -482,4 +488,167 @@ body {
     transform: translateY(-15%);
 }
 
-.textstssdf
+
+
+.pop-places__card {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    opacity: 0;
+    background: rgba(1,125,251,.7);
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+
+   transition: opacity .2s linear;
+
+}
+
+.pop-places__item:hover .pop-places__card {
+    opacity: 1;
+}
+
+.pop-places__item:hover .pop-places__name {
+    visibility: hidden;
+}
+
+.pop-places__card-name {
+    text-align: center;
+    font-size: 40px;
+    margin-bottom: 10px;
+    color: #fff;
+    font-size: 40px;
+
+}
+
+.pop-places__info {
+    display: flex;
+
+}
+
+.button--places {
+    background-color: transparent;
+    border-color: #fff;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 700;
+    margin-right: 5px;
+}
+
+.button--places:last-child {
+    margin-right: 0;
+}
+
+
+
+/*============== MOST POPULAR HOTELS ==============*/
+
+.pop-hotels {
+    padding-bottom: 40px;
+}
+
+.pop-hotels__content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.pop-hotels__item {
+    width: 23%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 60px;
+    padding-bottom: 20px;   
+
+    position: relative;
+
+    -webkit-box-shadow: 0px 7px 15px 0px rgba(50, 50, 50, 0.1);
+    -moz-box-shadow:    0px 7px 15px 0px rgba(50, 50, 50, 0.1);
+    box-shadow:         0px 7px 15px 0px rgba(50, 50, 50, 0.1);
+}
+
+.pop-hotels__img {
+    width: 100%;
+    height: 70%;
+}
+
+.pop-hotels__info {
+    display: flex;
+    justify-content: space-between;
+    background-color: #fefefe;
+    padding: 20px 30px 0 30px;
+    position: relative;
+}
+
+.pop-hotels__head {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.pop_hotels__name{
+    font-size: 18px;
+    font-weight: 400;
+    color: #697899;
+
+}
+
+.pop-hotels__rate {
+    
+}
+
+.pop-hotels__price {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.pop-hotels__cost {
+    font-size: 36px;
+    font-weight: 300;
+    color: #697899;
+
+}
+
+.pop-hotels__days {
+    font-size: 14px;
+    font-weight: 40;
+    color: #697899;
+    opacity: .8;
+    text-align: center;
+}
+
+.button-hotels {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+
+    padding: .7em 2em;
+
+    -webkit-box-shadow: 0px 7px 15px 0px rgba(50, 50, 50, 0.1);
+    -moz-box-shadow:    0px 7px 15px 0px rgba(50, 50, 50, 0.1);
+    box-shadow:         0px 7px 15px 0px rgba(50, 50, 50, 0.1);
+}
+
+.button-hotels:hover {
+    -webkit-box-shadow: 0px 0px 35px 0px rgba(1, 125, 251, 0.4);
+    -moz-box-shadow:    0px 0px 35px 0px rgba(1, 125, 251, 0.4);
+    box-shadow:         0px 0px 35px 0px rgba(1, 125, 251, 0.4);
+}
+
+@media (max-width:1500px) {
+    .pop-hotels__item {
+        width: 45%;
+    }
+    .pop-hotels__img {
+        height: 80%;
+    }
+}
