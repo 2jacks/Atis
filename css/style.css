@@ -12,6 +12,7 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 body {
+    width: 100%;
     font-family: "Roboto", sans-serif;
     font-weight: 400;
     background-color: #f9f9f9;
@@ -51,7 +52,7 @@ body {
 }
 
 .section__header {
-    padding: 70px 0;
+    padding: 70px 20px;
     
     font-size: 16px;
     color: #697899;
@@ -62,23 +63,30 @@ body {
     word-spacing: 20px;
 }
 
-
-
-
-
-
-
-/*============== Hero ==============*/
-
-.hero {
-    background: url(../img/hero/hero-bg.jpg) center no-repeat;
-    background-size: cover;
-    height: 86vh;
-    position: relative;
+@media screen and (max-device-width:767px) {
+    .section__header {
+        padding: 30px 20px;
+        font-size: 14px;
+    }
 }
 
 
+
+
 /*============== Header and Nav ==============*/
+
+.header {
+    width: 100%;
+    position: fixed;
+
+    -webkit-box-shadow: 0px 3px 6px 0px rgba(50, 50, 50, 0.2);
+    -moz-box-shadow:    0px 3px 6px 0px rgba(50, 50, 50, 0.2);
+    box-shadow:         0px 3px 6px 0px rgba(50, 50, 50, 0.2);
+    z-index: 500;
+
+    background-color: #ffffff;
+    
+}
 
 .header__inner {
     display: -webkit-flex;
@@ -89,15 +97,24 @@ body {
     
     justify-content: space-between;
     align-items: center;
-    padding: 2vw 0 0 0;
-    
-    
+    padding: 2vh 18px 2vh 18px;
+    position: relative;  
 }
 
 .header__logo {
     font-family: "Molle", sans-serif;
     font-size: 28px;
     color: #017dfb;
+}
+
+.header__info {
+    display: flex;
+}
+
+#header__nav {
+    display: flex;
+    align-items: center;
+    margin-right: 40px;
 }
 
 .nav__item {
@@ -108,7 +125,7 @@ body {
     color: #697899;
     opacity: .6;
     
-    margin-right: 40px;
+    margin-right: 35px;
     
     transition: all .15s linear;
 }
@@ -121,7 +138,82 @@ body {
     color: #017dfb;
     opacity: 1;
 }
-/*============== Hero-content ==============*/
+
+
+#burger-menu {
+    display: none;
+    margin: 10px;
+    cursor: pointer;
+}
+
+
+.burger-row {
+    display: none;
+    width: 30px;
+    height: 3px;
+    margin-bottom: 5px;
+    background-color: #017dfb;
+    border-radius: 25%;
+}
+
+#burger-row:last-child {
+    margin-bottom: 0;
+} 
+
+@media screen and (max-device-width: 989px) {
+    #burger-menu {
+        display: block;     
+    }
+
+    .burger-row {
+        display: block;
+    }
+
+    #header__nav {
+       display: none;        
+    }
+
+    #header__nav.open-nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+
+        width: 100%;
+        margin-right: 0;
+
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        
+        background-color: rgba(1, 125, 251, 0.5);
+
+    }
+
+    #header__nav.open-nav .nav__item {
+        color: #fff;
+        font-size: 18px;
+        text-transform: uppercase;
+        text-align: right;
+        margin-right: 28px;
+        margin-top: 10px;
+    }
+
+    #header__nav.open-nav .nav__item:last-child {
+        margin-bottom: 5px;
+    }
+    
+}
+
+
+/*============== Hero ==============*/
+
+.hero {
+    background: url(../img/hero/hero-bg.jpg) center no-repeat;
+    background-size: cover;
+    height: 86vh;
+    position: relative;
+    width: 100%;
+}
 
 .hero__content {
     display: -webkit-flex;
@@ -162,7 +254,7 @@ body {
     margin-bottom: 35px;
 }
 
-@media (max-width:420px) {
+@media screen and (max-device-width:420px) {
     .hero__title {
         font-size: 80px;
     }
@@ -178,6 +270,7 @@ body {
 
 .form {
     height: 14vh;
+    width: 100%;
     background-color: #017dfb;
     
     display: -webkit-flex;
@@ -221,8 +314,7 @@ body {
     display: -ms-flex;
     display: -o-flex;
     display: flex;
-    
- 
+
     width: 13%;
 
     padding-bottom: 10px;
@@ -258,8 +350,7 @@ body {
     
     color: #fff;
     font-size: 16px;
-    
-    
+ 
 }
 
 .form__input::-webkit-input-placeholder {
@@ -271,8 +362,6 @@ body {
 .form__input:focus {
     outline: none;
 }
-
-
 
 .form__input:focus::-webkit-input-placeholder {
     opacity: 0.3;
@@ -312,7 +401,7 @@ body {
     
 }
 
-@media (max-width:1099px) {
+@media screen and (max-device-width:1099px) {
     .form__fields {
         justify-content: flex-start;
     }
@@ -326,7 +415,7 @@ body {
     }
 }
     
-@media (max-width: 960px) {
+@media screen and (max-device-width: 960px) {
     .hero {
         height: 100vh;
     }
@@ -338,7 +427,7 @@ body {
         width: 30%;
     }
 }  
-@media (max-width: 575px) {
+@media screen and (max-device-width: 575px) {
     .form__inner {
         -webkit-flex-direction: column;
         -moz-flex-direction: column;
@@ -375,9 +464,7 @@ body {
     grid-template-rows: repeat(7, 10vh);
     grid-gap: 30px;
     max-width: 100vw;
-    margin: 0 auto;
-    
-    
+    margin: 0 auto; 
 }
 
 .pop-places__item {
@@ -396,17 +483,6 @@ body {
 
 }
 
-.pop-places__bg {
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-}
-
-.pop-places__img {
-    object-fit: fill;
-}
-
-
 .pop-places__item--thesseloniki {
     background: #787777 url(../img/pop-places/thesseloniki.jpg) center no-repeat;
     background-size: cover;
@@ -414,10 +490,6 @@ body {
     grid-row-end: 3;
     grid-column-start: 1;
     grid-column-end: 2;
-}
-.pop-places__item--thesseloniki .pop-places__img{
-    width: 100%;
-    transform: translateY(-15%);
 }
 
 .pop-places__item--crete {
@@ -428,9 +500,6 @@ body {
     grid-column-start: 2;
     grid-column-end: 4;
 }
-.pop-places__item--crete .pop-places__img{
-    transform: translateX(-12%);
-}
 
 .pop-places__item--halkidiki {
     background: #787777 url(../img/pop-places/halkidiki.jpg) center no-repeat;
@@ -439,10 +508,6 @@ body {
     grid-row-end: 5;
     grid-column-start: 1;
     grid-column-end: 2;
-}
-.pop-places__item--halkidiki .pop-places__img{
-    width: 100%;
-    transform: translateY(-15%);
 }
 
 .pop-places__item--athens {
@@ -453,9 +518,6 @@ body {
     grid-column-start: 4;
     grid-column-end: 5;
 }
-.pop-places__item--athens .pop-places__img{
-    transform: translateY(-10%);
-}
 
 .pop-places__item--mykonos {
     background: #787777 url(../img/pop-places/mykonos.jpg) center no-repeat;
@@ -465,9 +527,6 @@ body {
     grid-column-start: 4;
     grid-column-end: 5;
 }
-.pop-places__item--mykonos .pop-places__img{
-    transform: translateY(-15%);
-}
 
 .pop-places__item--meteora {
     background: #787777 url(../img/pop-places/meteora.jpg) center no-repeat;
@@ -476,10 +535,6 @@ body {
     grid-row-end: 8;
     grid-column-start: 1;
     grid-column-end: 3;
-}
-.pop-places__item--meteora .pop-places__img{
-    width: 100%;
-    transform: translateY(-15%);
 }
 
 .pop-places__item--myrtos-beach {
@@ -491,9 +546,7 @@ body {
     grid-column-start: 3;
     grid-column-end: 5;
 }
-.pop-places__item--myrtos-beach .pop-places__img{
-    transform: translateY(-15%);
-}
+
 
 
 
@@ -537,7 +590,6 @@ body {
 
 .pop-places__info {
     display: flex;
-
 }
 
 .button--places {
@@ -561,6 +613,7 @@ body {
 
 .pop-hotels {
     padding-bottom: 70px;
+    width: 100%;
 }
 
 .pop-hotels__content {
@@ -578,6 +631,7 @@ body {
     padding-bottom: 40px;
     position: relative;
 
+    background-color: #fff;
     -webkit-box-shadow: 0px 7px 15px 0px rgba(50, 50, 50, 0.1);
     -moz-box-shadow:    0px 7px 15px 0px rgba(50, 50, 50, 0.1);
     box-shadow:         0px 7px 15px 0px rgba(50, 50, 50, 0.1);
@@ -698,7 +752,7 @@ body {
     box-shadow:         0px 0px 35px 0px rgba(197, 197, 197, 0.4);
 }
 
-@media (min-width: 1155px) and (max-width:1249px) {
+@media screen and (min-device-width: 1155px) and (max-device-width:1249px) {
 
     .pop-hotels__item {
         margin-bottom: 60px;
@@ -726,13 +780,13 @@ body {
         margin-bottom: 20px;
     }
 }
-@media (max-width: 1155px) {
+@media screen and (max-device-width: 1155px) {
     .pop-hotels__item {
         width: 45%;
     }
 }
 
-@media (max-width: 680px) {
+@media screen and (max-device-width: 680px) {
     .pop-hotels__item {
         width: 100%;
     }
@@ -769,6 +823,7 @@ body {
     font-size: 58px;
     line-height: 1.5;
     margin-bottom: 55px;
+    padding: 0 10px;
 }
 
 .reviews__trigger {
@@ -796,7 +851,7 @@ body {
     background-size: cover;
 }
 
-@media (max-width:870px) {
+@media screen and (max-device-width:870px) {
     .reviews__content {
         margin: 250px auto;
     }
@@ -813,7 +868,7 @@ body {
     }
 }
 
-@media (max-width:420px) {
+@media screen and (max-device-width:420px) {
     .reviews__content {
         margin: 150px auto;
     }
@@ -852,4 +907,16 @@ body {
     color: #bdbdbd;
     font-size: 18px;
     font-weight: 400;
+}
+
+@media screen and (max-device-width: 767px) {
+    .footer__inner {
+        margin: 30px auto;
+    }
+    .footer__logo {
+        margin-bottom: 15px;
+    }
+    .copyright {
+        font-size: 14px;
+    }
 }

@@ -6,37 +6,58 @@
     <title>Atis</title>
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,400,700&display=swap" rel="stylesheet">
-    <!--    <link rel="stylesheet" href="css/normalize.css">-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="width">
 </head>
 
-
-
 <body>
-
-    <section class="hero">
-        <header class="header">
-            <div class="container">
-                <div class="header__inner">
-                    <span class="header__logo">Atis</span>
-                    <nav class="header__nav">
+    <header class="header">
+        <div class="container">
+            <div class="header__inner">
+                <span class="header__logo">Atis</span>
+                
+                <div class="header__info">
+                    <nav id="header__nav">
                         <a class="nav__item" href="">Flights</a>
                         <a class="nav__item" href="">Hotels</a>
                         <a class="nav__item" href="">Explore</a>
                         <a class="nav__item" href="">Restaurants</a>
                         <a class="nav__item" href="">Things to do</a>
                         <a class="nav__item" href="">About Greece</a>
-                        <button class="button button--header">Become a host</button>
                     </nav>
-
+                    <button class="button button--header">Become a host</button>
+                </div>
+                  
+                <div id="burger-menu">
+                    <div class="burger-row"></div>
+                    <div class="burger-row"></div>
+                    <div class="burger-row"></div>
                 </div>
             </div>
-        </header>
+        </div>
+        <script>
+            var burger = document.getElementById("burger-menu");
+
+            burger.addEventListener("click", showNav);
+            
+            function showNav() {
+                var nav = document.getElementById("header__nav");
+                nav.classList.toggle("open-nav");
+                burger.classList.toggle("change");
+            }
+        </script>
+    </header>
+
+    <section class="hero">
+
         <div class="hero__content">
             <h1 class="hero__title">Greece</h1>
             <h2 class="hero__subtitle">Welcome to heaven</h2>
             <button class="button button--hero">Check offer</button>
         </div>
+
+        
     </section>
     <form action="" class="form">
         <div class="container">
@@ -392,7 +413,7 @@
     <footer class="footer">
 
         <div class="footer__inner"><h3 class="footer__logo">Atis</h3>
-            <p class="copyright">ⓒ Copyright 2016. All rights reserved by symu.co</p></div>
+            <p class="copyright"> &#169 Copyright 2016. All rights reserved by symu.co</p></div>
         
     </footer>
 </body>
