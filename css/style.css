@@ -371,10 +371,10 @@ body {
 
 .pop-places__content {
     display: grid;
-    grid-template-columns: 30% 20% 20% 30%;
+    grid-template-columns: 30% repeat(2, 1fr) 30%;
     grid-template-rows: repeat(7, 10vh);
     grid-gap: 30px;
-    width: 100%;
+    max-width: 100vw;
     margin: 0 auto;
     
     
@@ -391,6 +391,8 @@ body {
 
     color: #fff;
     font-size: 36px;
+    opacity: 1;
+    transition: opacity .2s linear;
 
 }
 
@@ -406,6 +408,8 @@ body {
 
 
 .pop-places__item--thesseloniki {
+    background: #787777 url(../img/pop-places/thesseloniki.jpg) center no-repeat;
+    background-size: cover;
     grid-row-start: 1;
     grid-row-end: 3;
     grid-column-start: 1;
@@ -417,6 +421,8 @@ body {
 }
 
 .pop-places__item--crete {
+    background: #787777 url(../img/pop-places/creete.webp) center no-repeat;
+    background-size: cover;
     grid-row-start: 1;
     grid-row-end: 5;
     grid-column-start: 2;
@@ -427,6 +433,8 @@ body {
 }
 
 .pop-places__item--halkidiki {
+    background: #787777 url(../img/pop-places/halkidiki.jpg) center no-repeat;
+    background-size: cover;
     grid-row-start: 3;
     grid-row-end: 5;
     grid-column-start: 1;
@@ -438,6 +446,8 @@ body {
 }
 
 .pop-places__item--athens {
+    background: #787777 url(../img/pop-places/athens.jpg) center no-repeat;
+    background-size: cover;
     grid-row-start: 1;
     grid-row-end: 3;
     grid-column-start: 4;
@@ -448,6 +458,8 @@ body {
 }
 
 .pop-places__item--mykonos {
+    background: #787777 url(../img/pop-places/mykonos.jpg) center no-repeat;
+    background-size: cover;
     grid-row-start: 3;
     grid-row-end: 5;
     grid-column-start: 4;
@@ -458,6 +470,8 @@ body {
 }
 
 .pop-places__item--meteora {
+    background: #787777 url(../img/pop-places/meteora.jpg) center no-repeat;
+    background-size: cover;
     grid-row-start: 5;
     grid-row-end: 8;
     grid-column-start: 1;
@@ -469,6 +483,9 @@ body {
 }
 
 .pop-places__item--myrtos-beach {
+    background: #787777 url(../img/pop-places/myrtos-beach.jpg) center no-repeat;
+    background-size: cover;
+
     grid-row-start: 5;
     grid-row-end: 8;
     grid-column-start: 3;
@@ -506,7 +523,7 @@ body {
 }
 
 .pop-places__item:hover .pop-places__name {
-    visibility: hidden;
+    opacity: 0;
 }
 
 .pop-places__card-name {
@@ -543,7 +560,7 @@ body {
 /*============== MOST POPULAR HOTELS ==============*/
 
 .pop-hotels {
-    padding-bottom: 40px;
+    padding-bottom: 70px;
 }
 
 .pop-hotels__content {
@@ -657,7 +674,7 @@ body {
     box-shadow:         0px 0px 35px 0px rgba(1, 125, 251, 0.4);
 }
 
-.all_offerts {
+.pop-hotels__all-offerts {
     display: flex;
     justify-content: center;
     margin-top: 20px;
