@@ -6,9 +6,10 @@
     <title>Atis</title>
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,400,700&display=swap" rel="stylesheet">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="width">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 
 <body>
@@ -19,12 +20,11 @@
                 
                 <div class="header__info">
                     <nav id="header__nav">
-                        <a class="nav__item" href="">Flights</a>
-                        <a class="nav__item" href="">Hotels</a>
-                        <a class="nav__item" href="">Explore</a>
-                        <a class="nav__item" href="">Restaurants</a>
-                        <a class="nav__item" href="">Things to do</a>
-                        <a class="nav__item" href="">About Greece</a>
+                        <a class="nav__item" href="" data-scroll="#hero">Hero</a>
+                        <a class="nav__item" href="" data-scroll="#form">Take a Flight</a>
+                        <a class="nav__item" href="" data-scroll="#places">Places</a>
+                        <a class="nav__item" href="" data-scroll="#hotels">Hotels</a>
+                        <a class="nav__item" href="" data-scroll="#reviews">Testimonials</a>
                     </nav>
                     <button class="button button--header">Become a host</button>
                 </div>
@@ -36,20 +36,10 @@
                 </div>
             </div>
         </div>
-        <script>
-            var burger = document.getElementById("burger-menu");
-
-            burger.addEventListener("click", showNav);
-            
-            function showNav() {
-                var nav = document.getElementById("header__nav");
-                nav.classList.toggle("open-nav");
-                burger.classList.toggle("change");
-            }
-        </script>
+        
     </header>
 
-    <section class="hero">
+    <section class="hero" id="hero">
 
         <div class="hero__content">
             <h1 class="hero__title">Greece</h1>
@@ -59,7 +49,7 @@
 
         
     </section>
-    <form action="" class="form">
+    <form action="" class="form" id="form">
         <div class="container">
             <div class="form__inner">
                 <ul class="form__fields">
@@ -117,7 +107,7 @@
 
 
     </form>
-    <section class="pop-places">
+    <section class="pop-places" id="places">
         <h3 class="section__header">Most popular places</h3>
         <div class="pop-places__content">
 
@@ -125,7 +115,7 @@
                 <h3 class="pop-places__name">Thesseloniki</h3>
                 <div class="pop-places__card">
                     <h3 class="pop-places__card-name">Thesseloniki</h3>
-                    <div class="pop__places__info">
+                    <div class="pop-places__info">
                         <button class="button button--places">11 Flights</button>
                         <button class="button button--places">48 Restaurants</button>
                         <button class="button button--places">32 Hotels</button>
@@ -138,7 +128,7 @@
                 <h3 class="pop-places__name">Halkidiki</h3>
                 <div class="pop-places__card">
                     <h3 class="pop-places__card-name">Halkidiki</h3>
-                    <div class="pop__places__info">
+                    <div class="pop-places__info">
                         <button class="button button--places">11 Flights</button>
                         <button class="button button--places">48 Restaurants</button>
                         <button class="button button--places">32 Hotels</button>
@@ -151,7 +141,7 @@
                 <h3 class="pop-places__name">Crete</h3>
                 <div class="pop-places__card">
                     <h3 class="pop-places__card-name">Crete</h3>
-                    <div class="pop__places__info">
+                    <div class="pop-places__info">
                         <button class="button button--places">11 Flights</button>
                         <button class="button button--places">48 Restaurants</button>
                         <button class="button button--places">32 Hotels</button>
@@ -164,7 +154,7 @@
                 <h3 class="pop-places__name">Athens</h3>
                 <div class="pop-places__card">
                     <h3 class="pop-places__card-name">Athens</h3>
-                    <div class="pop__places__info">
+                    <div class="pop-places__info">
                         <button class="button button--places">11 Flights</button>
                         <button class="button button--places">48 Restaurants</button>
                         <button class="button button--places">32 Hotels</button>
@@ -177,7 +167,7 @@
                 <h3 class="pop-places__name">Mykonos</h3>
                 <div class="pop-places__card">
                     <h3 class="pop-places__card-name">Mykonos</h3>
-                    <div class="pop__places__info">
+                    <div class="pop-places__info">
                         <button class="button button--places">11 Flights</button>
                         <button class="button button--places">48 Restaurants</button>
                         <button class="button button--places">32 Hotels</button>
@@ -190,7 +180,7 @@
                 <h3 class="pop-places__name">Meteora</h3>
                 <div class="pop-places__card">
                     <h3 class="pop-places__card-name">Meteora</h3>
-                    <div class="pop__places__info">
+                    <div class="pop-places__info">
                         <button class="button button--places">11 Flights</button>
                         <button class="button button--places">48 Restaurants</button>
                         <button class="button button--places">32 Hotels</button>
@@ -203,7 +193,7 @@
                 <h3 class="pop-places__name">Myrtos Beach</h3>
                 <div class="pop-places__card">
                     <h3 class="pop-places__card-name">Myrtos Beach</h3>
-                    <div class="pop__places__info">
+                    <div class="pop-places__info">
                         <button class="button button--places">11 Flights</button>
                         <button class="button button--places">48 Restaurants</button>
                         <button class="button button--places">32 Hotels</button>
@@ -214,7 +204,7 @@
 
         </div>
     </section>
-    <section class="pop-hotels">
+    <section class="pop-hotels" id="hotels">
         <h3 class="section__header">Most popular hotels</h3>
         <div class="container">
             <div class="pop-hotels__content">
@@ -401,7 +391,7 @@
             <button class="button button-gray">View all offerts</button>
         </div> 
     </section>
-    <section class="reviews">
+    <section class="reviews" id="reviews">
         <div class="reviews__item review1">
             <div class="reviews__content">
                 <h3 class="reviews__title">And then God said <br>let there be a <span class="reviews__trigger">Greece</span></h3>
@@ -416,5 +406,8 @@
             <p class="copyright"> &#169 Copyright 2016. All rights reserved by symu.co</p></div>
         
     </footer>
+
+    <script src="nav.js"></script>
+    <script src="burger.js"></script>
 </body>
 </html>
