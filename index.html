@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <title>Atis</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,400,700&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="HandheldFriendly" content="True">
@@ -268,7 +269,7 @@
 
                     <div class="pop-hotels__info">
                         <div class="pop-hotels__head">
-                            <h3 class="pop_hotels__name">Louis Creta Princess</h3>
+                            <h3 class="pop_hotels__name">Louis Creta</h3>
                             <div class="pop-hotels__rate">
                                 <svg class="pop-hotels__star">
                                     <use xlink:href="sprite.svg#star"></use>
@@ -379,13 +380,42 @@
         </div>
     </section>
     <section class="reviews" id="reviews">
-        <div class="reviews__item review1">
-            <div class="reviews__content">
-                <h3 class="reviews__title">And then God said <br>let there be a <span class="reviews__trigger">Greece</span></h3>
-                <p class="reviews__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo magnam at autem ex nesciunt! Commodi ullam in recusandae incidunt fugiat possimus rerum illo nostrum voluptatum. Corporis perspiciatis cumque cupiditate consectetur dolor optio rem amet eaque molestiae illum libero voluptates laudantium iure, commodi eveniet voluptatum aspernatur repudiandae ipsa. Vel, numquam nisi.</p>
-                <p class="reviews__author">John Doe, mytravels.com</p>
+        
+            <div id="reviewsSlider">
+                <div class="slick-item">
+                    <div class="reviews__item review1">
+            
+                        <div class="reviews__content">
+                            <h3 class="reviews__title">And then God said <br>let there be a <span class="reviews__trigger">Greece</span></h3>
+                            <p class="reviews__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo magnam at autem ex nesciunt! Commodi ullam in recusandae incidunt fugiat possimus rerum illo nostrum voluptatum. Corporis perspiciatis cumque cupiditate consectetur dolor optio rem amet eaque molestiae illum libero voluptates laudantium iure, commodi eveniet voluptatum aspernatur repudiandae ipsa. Vel, numquam nisi.</p>
+                            <p class="reviews__author">John Doe, mytravels.com</p>
+                        </div>
+                    </div>
+                </div>
+
+        <div class="slick-item">
+            <div class="reviews__item review2">
+                <div class="reviews__content">
+                    <h3 class="reviews__title">And then You said <br>let there be a <span class="reviews__trigger">Greece</span></h3>
+                    <p class="reviews__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia labore, maxime neque unde vitae voluptates, illum ut accusamus libero et voluptas minus natus error laudantium distinctio in harum. Eaque, fugiat?</p>
+                    <p class="reviews__author">John Doe, mytravels.com</p>
+                </div>
             </div>
         </div>
+        
+
+        <div class="slick-item">
+            <div class="reviews__item review3">
+                    <div class="reviews__content">
+                        <h3 class="reviews__title">And then I said <br>let there be a <span class="reviews__trigger">Greece</span></h3>
+                        <p class="reviews__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo magnam</p>
+                        <p class="reviews__author">John Doe, mytravels.com</p>
+                </div>
+            </div>
+        </div>
+    </div>
+        
+
     </section>
     <footer class="footer">
 
@@ -396,8 +426,10 @@
 
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script src="nav.js"></script>
     <script src="burger.js"></script>
+    <script src="slider.js"></script>
 </body>
 
 </html>
