@@ -22,6 +22,9 @@ body {
     font-weight: 400;
     background-color: #f9f9f9;
 }
+body.lock {
+    overflow: hidden;
+}
 
 
 .container {
@@ -91,6 +94,7 @@ body {
 
 .header {
     width: 100%;
+    height: 90px;
     position: fixed;
     z-index: 500;
 
@@ -104,13 +108,15 @@ body {
     display: -o-flex;
     display: -webkit-box;
     display: flex;
+    height: 90px;
+    
 
     -webkit-box-pack: justify;
 
     justify-content: space-between;
     -webkit-box-align: center;
     align-items: center;
-    padding: 2vh 18px 2vh 18px;
+    padding: 0 30px;
     position: relative;
 }
 
@@ -118,6 +124,7 @@ body {
     font-family: "Molle", sans-serif;
     font-size: 28px;
     color: #017dfb;
+    text-decoration: none;
 }
 
 .header__info {
@@ -131,6 +138,7 @@ body {
     -webkit-box-align: center;
     align-items: center;
     margin-right: 40px;
+    
 }
 
 .nav__item {
@@ -140,16 +148,15 @@ body {
     text-decoration: none;
     color: #697899;
     opacity: .6;
-
+    
+    height: 100%;
+    display: flex;
+    align-items: center;
     margin-right: 35px;
 
     -webkit-transition: all .15s linear;
 
     transition: all .15s linear;
-}
-
-.nav__item:last-child {
-    margin-right: 0;
 }
 
 .nav__item:hover {
@@ -158,76 +165,121 @@ body {
 }
 
 
-#burger-menu {
+#burger {
     display: none;
-    margin: 10px;
-    cursor: pointer;
 }
 
 
-.burger-row {
-    display: none;
-    width: 30px;
-    height: 3px;
-    margin-bottom: 5px;
-    background-color: #017dfb;
-    border-radius: 25%;
-}
 
-#burger-row:last-child {
-    margin-bottom: 0;
-}
-
-@media screen and (max-width: 989px) {
-    #burger-menu {
+@media screen and (max-width: 991.98px) {
+    #burger {
         display: block;
+        width: 30px;
+        height: 20px;
+        position: relative;
+        right: 14px;
+        z-index: 1000;
     }
 
-    .burger-row {
+    #burger::before, #burger::after {
+        content: '';
         display: block;
+        width: 100%;
+        height: 2px;
+        position: absolute;
+
+        background-color: #017dfb;
+        transition: all .2s linear;
+    }
+    #burger::before {
+        top: 0;
+    }
+    #burger::after {
+        bottom: 0;
+    }
+    #burger.active::before {
+        transform: rotate(45deg);
+        top: 9px;
+    }
+    #burger.active span {
+        transform: scale(0);
+    }
+    #burger.active::after {
+        transform: rotate(-45deg);
+        bottom: 9px;
+    }
+    .burger__row {
+        width: 100%;
+        height: 2px;
+        top: 9px;
+        position: absolute;
+
+        background-color: #017dfb;
+        transition: all .2s linear;
     }
 
     #header__nav {
-        display: none;
+        position: fixed;
+        top: -100%;
+        left: 0;
+        z-index: 10;
+        transition: top .5s linear;
     }
 
-    #header__nav.open-nav {
-        position: absolute;
-        top: 100%;
-        left: 0;
+    #header__nav.active {
+        top: 0;
+        
+        padding-top: 100px;
 
         width: 100%;
-        margin-right: 0;
+        height: 100vh;
 
-        display: -webkit-box;
         display: flex;
-        -webkit-box-orient: vertical;
-        -webkit-box-direction: normal;
         flex-direction: column;
-        -webkit-box-align: end;
+        justify-content: start;
         align-items: flex-end;
+        overflow: auto;
 
-        background-color: rgba(1, 125, 251, 0.5);
+        background-color: #fff;
     }
-
-    #header__nav.open-nav .nav__item {
-        color: #fff;
-        font-size: 18px;
+    #header__nav.active .nav__item {
         text-transform: uppercase;
-        text-align: right;
-        margin-right: 28px;
-        margin-top: 10px;
+        font-size: 24px;
+        margin-bottom: 40px;
+        height: auto;
     }
+    .header {
+        height: 70px;
+        box-shadow: none;
+    }
+    .header__inner {
+        padding: 0 15px;
+        height: 70px;
+        align-items: center;
+    }
+    .header::before {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 70px;
+        background-color: #fff;
+        box-shadow: 0px 3px 6px 0px rgba(50, 50, 50, 0.2);
 
-    #header__nav.open-nav .nav__item:last-child {
-        margin-bottom: 5px;
+        position: fixed;
+        z-index: 100;
+    }
+    .header__logo {
+        z-index: 100;
+    }
+    .button--header {
+        z-index: 100;
     }
 
 }
 
 @media screen and (max-device-width: 500px) {
     .header__inner {
-        padding: 2vh 14px 2vh 14px;
+        padding: 0 14px;
     }
 
     .button--header {
@@ -468,7 +520,7 @@ body {
 
     .form {
         height: auto;
-        padding: 10px 0;
+        padding: 20px 0 10px 0;
     }
 
     .form__item {
@@ -531,7 +583,6 @@ body {
 .pop-places__item {
     position: relative;
     width: 100%;
-    height: auto;
 }
 
 .pop-places__name {
@@ -683,7 +734,51 @@ body {
     }
 }
 
+@media (max-width:1200px) {
+    .pop-places__content {
+        display: flex;
+        height: auto;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        grid-gap: 0;
+    }
+    .pop-places__item {
+        width: 49%;
+        margin-bottom: 20px;
+        height: 300px;
+    }
+    .pop-places__card {
+        opacity: 1;
+        width: 100%;
+        height: auto;
+        background: rgb(1, 125, 251);
+
+        top: 0;
+        left: 0;
+        transform: none;
+        
+    }
+    .pop-places__info {
+        padding: 10px 0;
+        flex-wrap: nowrap;
+    }
+    .pop-places__card-name {
+        display: none;
+        
+    }
+    .button--places {
+        margin-bottom: 0;
+    }
+    .pop-places__item:hover .pop-places__name {
+        opacity: 1;
+    }
+}
+
 @media (max-width:767px) {
+    .pop-places__item {
+        width: 100%;
+        margin-bottom: 30px;
+    }
     .pop-places__card {
         flex-direction: column;
     }
@@ -697,17 +792,10 @@ body {
 
 @media (max-width: 500px) {
     .pop-places__content {
-        display: flex;
+        height: auto;
         flex-direction: column;
         padding: 0 10px;
-
     }
-    .pop-places__item {
-        width: 100%;
-        height: 200px;
-        margin-bottom: 30px;
-    }
-    
 }
 
 
@@ -771,11 +859,10 @@ body {
     
 }
 
-.pop_hotels__name {
+.pop-hotels__name {
     font-size: 18px;
     font-weight: 400;
     color: #697899;
-    text-align: center;
 }
 
 .pop-hotels__rate {
@@ -814,7 +901,6 @@ body {
     font-weight: 40;
     color: #697899;
     opacity: .8;
-    text-align: center;
 }
 
 .button-hotels {
@@ -866,17 +952,15 @@ body {
 
     .pop-hotels__info {
         flex-direction: column;
-        align-items: center;
         margin-bottom: 0;
     }
 
     .pop-hotels__head {
-        
-        align-items: center;
+
         margin-bottom: 20px;
     }
 
-    .pop_hotels__name {
+    .pop-hotels__name {
         margin-bottom: 5px;
         white-space: nowrap;
     }
@@ -914,8 +998,6 @@ body {
 /*============== REVIEWS ==============*/
 
 .reviews {
-    min-height: 500px;
-    max-height: 100vh;
 }
 
 .reviews__item {
@@ -928,19 +1010,24 @@ body {
     align-items: center;
     -webkit-box-pack: justify;
     justify-content: space-between;
+    height: 70vh;
 }
 
 .reviews__content {
     max-width: 830px;
     text-align: center;
-    margin: 200px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
 }
 
 .reviews__title {
     font-weight: 700;
     color: #fff;
     font-size: 58px;
-    line-height: 1.5;
+    line-height: 1.3;
     margin-bottom: 55px;
     padding: 0 10px;
 }
@@ -984,7 +1071,7 @@ body {
     display: flex;
     justify-content: center;
     position: absolute;
-    bottom: 40px;
+    bottom: 5%;
     left: 50%;
     transform: translateX(-50%);
     align-items: center;
@@ -1011,14 +1098,12 @@ body {
     outline: none;
 }
 
-@media screen and (max-device-width:870px) {
-    .reviews__content {
-        margin: 250px auto;
-    }
+@media screen and (max-width:870px) {
 
     .reviews__title {
         font-size: 48px;
         margin-bottom: 40px;
+        line-height: 1.1;
     }
 
     .reviews__text {
@@ -1028,14 +1113,15 @@ body {
     }
 }
 
-@media screen and (max-device-width:420px) {
-    .reviews__content {
-        margin: 150px auto;
+@media screen and (max-width:420px) {
+    .reviews__item {
+        height: 80vh;
     }
+
 
     .reviews__title {
         font-size: 38px;
-        margin-bottom: 30px;
+        margin-bottom: 20px;
     }
 
     .reviews__text {
