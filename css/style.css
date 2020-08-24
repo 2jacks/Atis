@@ -786,7 +786,7 @@ body.lock {
         display: none;
     }
     .button--places {
-        width: 60%;
+        padding: .4em 1.2em;
     }
 }
 
